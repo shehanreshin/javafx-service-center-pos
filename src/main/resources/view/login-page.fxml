@@ -10,9 +10,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <TextField fx:id="txtEmail" layoutX="637.0" layoutY="337.0" prefHeight="68.0" prefWidth="383.0" promptText="Email">
+      <TextField fx:id="txtEmail" layoutX="611.0" layoutY="315.0" prefHeight="77.0" prefWidth="435.0" promptText="Email">
          <padding>
             <Insets left="50.0" />
          </padding>
@@ -22,19 +22,21 @@
             <Image url="@../img/repairman.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="768.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="134.0" fitWidth="134.0" layoutX="760.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/avatar.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblLogin" layoutX="764.0" layoutY="239.0" style="-fx-font-size: 48; -fx-font-weight: 500;" text="Login" />
-      <JFXButton fx:id="btnLogin" layoutX="638.0" layoutY="585.0" prefHeight="55.0" prefWidth="382.0" text="Log In" />
-      <Label fx:id="lblForgotPassword" layoutX="894.0" layoutY="516.0" style="-fx-font-size: 16; -fx-font-weight: 500;" text="Forgot Password?" />
-      <PasswordField fx:id="txtPassword" layoutX="637.0" layoutY="431.0" prefHeight="68.0" prefWidth="383.0" promptText="Password">
+      <Label fx:id="lblLogin" layoutX="761.0" layoutY="204.0" style="-fx-font-size: 55; -fx-font-weight: 500;" text="Login" />
+      <JFXButton fx:id="btnLogin" layoutX="611.0" layoutY="590.0" onAction="#loginButtonOnAction" prefHeight="63.0" prefWidth="434.0" text="Log In" />
+      <Label fx:id="lblForgotPassword" layoutX="758.0" layoutY="666.0" onMouseClicked="#forgotPasswordLabelOnClick" style="-fx-font-size: 18; -fx-font-weight: 500;" text="Forgot Password?" />
+      <PasswordField fx:id="txtPassword" layoutX="611.0" layoutY="441.0" prefHeight="77.0" prefWidth="435.0" promptText="Password">
          <padding>
             <Insets left="50.0" />
          </padding>
       </PasswordField>
+      <Label fx:id="lblEmailError" layoutX="611.0" layoutY="401.0" onMouseClicked="#forgotPasswordLabelOnClick" prefHeight="25.0" prefWidth="435.0" style="-fx-font-size: 18; -fx-font-weight: 500;" text="Couldn’t find your account" />
+      <Label fx:id="lblPasswordError" layoutX="611.0" layoutY="526.0" onMouseClicked="#forgotPasswordLabelOnClick" style="-fx-font-size: 18; -fx-font-weight: 500;" text="Incorrect password" />
    </children>
    <stylesheets>
       <URL value="@../css/login-page.css" />

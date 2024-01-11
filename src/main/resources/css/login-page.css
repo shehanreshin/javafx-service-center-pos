@@ -7,7 +7,7 @@ AnchorPane {
     -fx-border-radius: 100;
     -fx-background-radius: 100;
     -fx-text-fill: #F7F7F7;
-    -fx-font-size: 24;
+    -fx-font-size: 27;
 }
 
 TextField, PasswordField {
@@ -17,7 +17,7 @@ TextField, PasswordField {
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 4;
     -fx-border-color: #333333;
-    -fx-font-size: 20;
+    -fx-font-size: 23;
     -fx-font-weight: 500;
 }
 
@@ -52,4 +52,9 @@ TextField:focused, PasswordField:focused{
 #lblForgotPassword:hover {
     -fx-text-fill: #3358FF;
     -fx-cursor: hand;
+}
+
+#lblEmailError, #lblPasswordError {
+    visibility: hidden;
+    -fx-text-fill: #EA0026;
 }
