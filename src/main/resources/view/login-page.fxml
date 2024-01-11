@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="txtEmail" layoutX="637.0" layoutY="337.0" prefHeight="68.0" prefWidth="383.0" promptText="Email">
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </TextField>
+      <ImageView fitHeight="721.0" fitWidth="520.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/repairman.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="768.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/avatar.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblLogin" layoutX="764.0" layoutY="239.0" style="-fx-font-size: 48; -fx-font-weight: 500;" text="Login" />
+      <JFXButton fx:id="btnLogin" layoutX="638.0" layoutY="585.0" prefHeight="55.0" prefWidth="382.0" text="Log In" />
+      <Label fx:id="lblForgotPassword" layoutX="894.0" layoutY="516.0" style="-fx-font-size: 16; -fx-font-weight: 500;" text="Forgot Password?" />
+      <PasswordField fx:id="txtPassword" layoutX="637.0" layoutY="431.0" prefHeight="68.0" prefWidth="383.0" promptText="Password">
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </PasswordField>
+   </children>
+   <stylesheets>
+      <URL value="@../css/login-page.css" />
+      <URL value="@../css/common.css" />
+   </stylesheets>
 </AnchorPane>
