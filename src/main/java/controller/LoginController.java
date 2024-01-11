@@ -42,6 +42,7 @@ public class LoginController {
     @FXML
     void loginButtonOnAction(ActionEvent event) {
         boolean isEmailValid = isEmailValid();
+        boolean isPasswordValid = isPasswordValid();
     }
 
     private boolean isEmailValid() {
@@ -53,7 +54,20 @@ public class LoginController {
         return true;
     }
 
+    private boolean isPasswordValid() {
+        if (isPasswordEmpty()) {
+            lblPasswordError.setVisible(true);
+            return false;
+        }
+        lblPasswordError.setVisible(false);
+        return true;
+    }
+
     private boolean isEmailEmpty() {
         return txtEmail.getText().isEmpty();
+    }
+
+    private boolean isPasswordEmpty() {
+        return txtPassword.getText().isEmpty();
     }
 }
