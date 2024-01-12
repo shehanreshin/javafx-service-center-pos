@@ -35,8 +35,8 @@
             <Insets left="50.0" />
          </padding>
       </PasswordField>
-      <Label fx:id="lblEmailError" layoutX="611.0" layoutY="401.0" onMouseClicked="#forgotPasswordLabelOnClick" prefHeight="25.0" prefWidth="435.0" style="-fx-font-size: 18; -fx-font-weight: 500;" text="Couldn’t find your account" />
-      <Label fx:id="lblPasswordError" layoutX="611.0" layoutY="526.0" onMouseClicked="#forgotPasswordLabelOnClick" style="-fx-font-size: 18; -fx-font-weight: 500;" text="Incorrect password" />
+      <Label fx:id="lblEmailError" layoutX="611.0" layoutY="401.0" onMouseClicked="#forgotPasswordLabelOnClick" prefHeight="25.0" prefWidth="435.0" style="-fx-font-size: 18; -fx-font-weight: 500;" text="" />
+      <Label fx:id="lblPasswordError" layoutX="611.0" layoutY="526.0" onMouseClicked="#forgotPasswordLabelOnClick" style="-fx-font-size: 18; -fx-font-weight: 500;" text="" />
    </children>
    <stylesheets>
       <URL value="@../css/login-page.css" />

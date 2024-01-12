@@ -47,6 +47,7 @@ public class LoginController {
 
     private boolean isEmailValid() {
         if (isEmailEmpty()) {
+            lblEmailError.setText("This field is required");
             lblEmailError.setVisible(true);
             return false;
         }
@@ -56,6 +57,7 @@ public class LoginController {
 
     private boolean isPasswordValid() {
         if (isPasswordEmpty()) {
+            lblPasswordError.setText("This field is required");
             lblPasswordError.setVisible(true);
             return false;
         }
