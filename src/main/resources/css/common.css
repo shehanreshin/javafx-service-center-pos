@@ -5,3 +5,7 @@
 JFXButton:hover, JButton:hover {
     -fx-cursor: hand;
 }
+
+AnchorPane {
+    -fx-background-color: #F7F7F7;
+}
