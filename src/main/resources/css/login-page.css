@@ -1,0 +1,56 @@
+#btnLogin {
+    -fx-background-color: #3358FF;
+    -fx-border-radius: 100;
+    -fx-background-radius: 100;
+    -fx-text-fill: #F7F7F7;
+    -fx-font-size: 27;
+}
+
+TextField, PasswordField {
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #333333;
+    -fx-background-color: #F7F7F7;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 4;
+    -fx-border-color: #333333;
+    -fx-font-size: 23;
+    -fx-font-weight: 500;
+}
+
+TextField:focused, PasswordField:focused{
+    -fx-border-color: #3358FF;
+}
+
+#txtEmail {
+    -fx-background-image: url("../img/email.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+}
+
+#txtEmail:focused {
+    -fx-background-image: url("../img/email-focused.png");
+}
+
+#txtPassword {
+    -fx-background-image: url("../img/password.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+}
+
+#txtPassword:focused {
+    -fx-background-image: url("../img/password-focused.png");
+}
+
+#lblLogin, #lblForgotPassword {
+    -fx-text-fill: #0F0F0F;
+}
+
+#lblForgotPassword:hover {
+    -fx-text-fill: #3358FF;
+    -fx-cursor: hand;
+}
+
+#lblEmailError, #lblPasswordError {
+    visibility: hidden;
+    -fx-text-fill: #EA0026;
+}

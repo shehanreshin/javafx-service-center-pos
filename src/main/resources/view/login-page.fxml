@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <TextField fx:id="txtEmail" layoutX="611.0" layoutY="315.0" prefHeight="77.0" prefWidth="435.0" promptText="Email">
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </TextField>
+      <ImageView fitHeight="721.0" fitWidth="520.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/repairman.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="134.0" fitWidth="134.0" layoutX="760.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/avatar.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblLogin" layoutX="761.0" layoutY="204.0" style="-fx-font-size: 55; -fx-font-weight: 500;" text="Login" />
+      <JFXButton fx:id="btnLogin" layoutX="611.0" layoutY="590.0" onAction="#loginButtonOnAction" prefHeight="63.0" prefWidth="434.0" text="Log In" />
+      <Label fx:id="lblForgotPassword" layoutX="758.0" layoutY="666.0" onMouseClicked="#forgotPasswordLabelOnClick" style="-fx-font-size: 18; -fx-font-weight: 500;" text="Forgot Password?" />
+      <PasswordField fx:id="txtPassword" layoutX="611.0" layoutY="441.0" prefHeight="77.0" prefWidth="435.0" promptText="Password">
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </PasswordField>
+      <Label fx:id="lblEmailError" layoutX="611.0" layoutY="401.0" onMouseClicked="#forgotPasswordLabelOnClick" prefHeight="25.0" prefWidth="435.0" style="-fx-font-size: 18; -fx-font-weight: 500;" text="" />
+      <Label fx:id="lblPasswordError" layoutX="611.0" layoutY="526.0" onMouseClicked="#forgotPasswordLabelOnClick" style="-fx-font-size: 18; -fx-font-weight: 500;" text="" />
+   </children>
+   <stylesheets>
+      <URL value="@../css/login-page.css" />
+      <URL value="@../css/common.css" />
+   </stylesheets>
+</AnchorPane>
