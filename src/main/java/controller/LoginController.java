@@ -4,6 +4,7 @@ import bo.custom.UserBo;
 import bo.custom.impl.UserBoImpl;
 import com.jfoenix.controls.JFXButton;
 import dto.UserDto;
+import dto.wrapper.UserDtoWrapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -48,13 +49,14 @@ public class LoginController {
 
     @FXML
     void loginButtonOnAction(ActionEvent event) {
-        if (!isEmailValid()) {
+        if (!isEmailValid() | !isPasswordValid()) {
             return;
         }
 
-        UserDto userDto = null;
+        boolean isValidUser;
+        UserDtoWrapper userCredentials = new UserDtoWrapper(txtEmail.getText(), txtPassword.getText());
         try {
-            userDto = userBo.searchUserByEmail(txtEmail.getText());
+            isValidUser = userBo.isUserCredentialsValid(userCredentials);
         } catch (SQLException | ClassNotFoundException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -63,12 +65,16 @@ public class LoginController {
             return;
         }
 
-        if (isPasswordValid(userDto)) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Login successful");
-            alert.setContentText("You're in!");
-            alert.showAndWait();
+        if (!isValidUser) {
+            lblPasswordError.setText("Incorrect password");
+            lblPasswordError.setVisible(true);
+            return;
         }
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Login successful");
+        alert.setContentText("You're in!");
+        alert.showAndWait();
     }
 
     private boolean isEmailValid() {
@@ -100,15 +106,9 @@ public class LoginController {
         return true;
     }
 
-    private boolean isPasswordValid(UserDto userDto) {
+    private boolean isPasswordValid() {
         if (isPasswordEmpty()) {
             lblPasswordError.setText("This field is required");
-            lblPasswordError.setVisible(true);
-            return false;
-        }
-
-        if (!userDto.getPassword().equals(txtPassword.getText())) {
-            lblPasswordError.setText("Incorrect password");
             lblPasswordError.setVisible(true);
             return false;
         }

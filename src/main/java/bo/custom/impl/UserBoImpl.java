@@ -4,10 +4,12 @@ import bo.custom.UserBo;
 import dao.custom.UserDao;
 import dao.custom.impl.UserDaoImpl;
 import dto.UserDto;
+import dto.wrapper.UserDtoWrapper;
 import entity.User;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class UserBoImpl implements UserBo {
     private UserDao userDao = new UserDaoImpl();
@@ -61,5 +63,14 @@ public class UserBoImpl implements UserBo {
                 selectedUser.getPassword(),
                 selectedUser.getRole()
         );
+    }
+
+    @Override
+    public boolean isUserCredentialsValid(UserDtoWrapper userCredentials) throws SQLException, ClassNotFoundException {
+        Optional<UserDto> storedUser = Optional.ofNullable(searchUserByEmail(userCredentials.getEmail()));
+        if (!storedUser.isPresent()) {
+            return false;
+        }
+        return storedUser.get().getPassword().equals(userCredentials.getPassword());
     }
 }
