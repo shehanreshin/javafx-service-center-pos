@@ -1,12 +1,16 @@
 package bo.custom.impl;
 
 import bo.custom.UserBo;
+import bo.util.HashConverter;
 import dao.custom.UserDao;
 import dao.custom.impl.UserDaoImpl;
 import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
 import entity.User;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -66,11 +70,14 @@ public class UserBoImpl implements UserBo {
     }
 
     @Override
-    public boolean isUserCredentialsValid(UserDtoWrapper userCredentials) throws SQLException, ClassNotFoundException {
+    public boolean isUserCredentialsValid(UserDtoWrapper userCredentials) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException {
         Optional<UserDto> storedUser = Optional.ofNullable(searchUserByEmail(userCredentials.getEmail()));
         if (!storedUser.isPresent()) {
             return false;
         }
-        return storedUser.get().getPassword().equals(userCredentials.getPassword());
+        String hashedPassword = HashConverter.getInstance().toHexString(
+                        HashConverter.getInstance().getHash(userCredentials.getPassword())
+        );
+        return storedUser.get().getPassword().equals(hashedPassword);
     }
 }

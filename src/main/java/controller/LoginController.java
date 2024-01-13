@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -57,7 +58,7 @@ public class LoginController {
         UserDtoWrapper userCredentials = new UserDtoWrapper(txtEmail.getText(), txtPassword.getText());
         try {
             isValidUser = userBo.isUserCredentialsValid(userCredentials);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | NoSuchAlgorithmException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Internal server error");

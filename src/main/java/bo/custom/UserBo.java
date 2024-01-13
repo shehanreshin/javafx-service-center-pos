@@ -3,6 +3,7 @@ package bo.custom;
 import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface UserBo {
     boolean deleteUser(String id);
     UserDto searchUser(String id);
     UserDto searchUserByEmail(String email) throws SQLException, ClassNotFoundException;
-    boolean isUserCredentialsValid(UserDtoWrapper userCredentials) throws SQLException, ClassNotFoundException;
+    boolean isUserCredentialsValid(UserDtoWrapper userCredentials) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException;
 }
