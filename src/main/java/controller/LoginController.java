@@ -1,6 +1,9 @@
 package controller;
 
+import bo.custom.UserBo;
+import bo.custom.impl.UserBoImpl;
 import com.jfoenix.controls.JFXButton;
+import dto.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -9,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,6 +38,8 @@ public class LoginController {
     @FXML
     private Label lblPasswordError;
 
+    UserBo userBo = new UserBoImpl();
+
     @FXML
     void forgotPasswordLabelOnClick(MouseEvent event) {
 
@@ -51,7 +57,18 @@ public class LoginController {
             lblEmailError.setVisible(true);
             return false;
         }
-        lblEmailError.setVisible(false);
+        UserDto userDto;
+        try {
+            userDto = userBo.searchUserByEmail(txtEmail.getText());
+            System.out.println(userDto);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        lblEmailError.setText(userDto.getEmail());
+        lblEmailError.setVisible(true);
+//        lblEmailError.setVisible(false);
         return true;
     }
 
