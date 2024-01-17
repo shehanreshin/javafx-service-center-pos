@@ -87,6 +87,7 @@ public class PasswordResetController implements Initializable {
             return;
         }
 
+        clearFields();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Password Reset");
         alert.setContentText("The password has been successfully reset");
@@ -183,5 +184,11 @@ public class PasswordResetController implements Initializable {
 
     private boolean isOtpEmpty() {
         return txtOtp.getText().isEmpty();
+    }
+
+    private void clearFields() {
+        txtEmail.clear();
+        txtPassword.clear();
+        txtOtp.clear();
     }
 }
