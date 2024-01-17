@@ -2,6 +2,7 @@ package bo.custom;
 
 import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
+import jakarta.mail.MessagingException;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
@@ -14,5 +15,8 @@ public interface UserBo {
     boolean deleteUser(String id);
     UserDto searchUser(String id);
     UserDto searchUserByEmail(String email) throws SQLException, ClassNotFoundException;
-    boolean isUserCredentialsValid(UserDtoWrapper userCredentials) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException;
+    boolean isUserCredentialsValid(String email, String password) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException;
+    public void sendOtpByEmail(String recepient) throws MessagingException;
+    public int getCurrentOtp();
+    public boolean updatePassword(String email, String password) throws NoSuchAlgorithmException, SQLException, ClassNotFoundException;
 }
