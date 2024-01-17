@@ -34,7 +34,19 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean update(User entity) throws SQLException, ClassNotFoundException {
-        return false;
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+
+        User user = session.find(User.class, entity.getUserId());
+        user.setName(entity.getName());
+        user.setEmail(entity.getEmail());
+        user.setPassword(entity.getPassword());
+        user.setRole(entity.getRole());
+
+        session.save(user);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

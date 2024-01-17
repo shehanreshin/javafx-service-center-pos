@@ -72,9 +72,8 @@ public class LoginController {
         }
 
         boolean isValidUser;
-        UserDtoWrapper userCredentials = new UserDtoWrapper(txtEmail.getText(), txtPassword.getText());
         try {
-            isValidUser = userBo.isUserCredentialsValid(userCredentials);
+            isValidUser = userBo.isUserCredentialsValid(txtEmail.getText(), txtPassword.getText());
         } catch (SQLException | ClassNotFoundException | NoSuchAlgorithmException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
