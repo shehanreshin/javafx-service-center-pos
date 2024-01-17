@@ -19,12 +19,12 @@
       </TextField>
       <ImageView fitHeight="721.0" fitWidth="520.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/repairman.png" />
+            <Image url="@../img/login-page/repairman.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="134.0" fitWidth="134.0" layoutX="760.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/avatar.png" />
+            <Image url="@../img/login-page/avatar.png" />
          </image>
       </ImageView>
       <Label fx:id="lblLogin" layoutX="761.0" layoutY="204.0" style="-fx-font-size: 55; -fx-font-weight: 500;" text="Login" />
