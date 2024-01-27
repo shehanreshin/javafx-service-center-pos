@@ -23,7 +23,6 @@ public class Mailer {
         transport.connect(EMAIL_HOST, ENE_SENDER_EMAIL, ENE_SENDER_PASSWORD);
         transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
         transport.close();
-        System.out.println("Email sent successfully");
     }
 
     public MimeMessage draftEmail(String recepient, String subject, String body) throws MessagingException {

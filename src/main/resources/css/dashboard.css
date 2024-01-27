@@ -1,0 +1,8 @@
+.root * {
+    -fx-padding: 0;
+}
+
+.nav-item {
+    -fx-background-color: #F7F7F7;
+    -fx-border-color: #F7F7F7;
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" stylesheets="@../css/common.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <ImageView fitHeight="744.0" fitWidth="123.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/dashboard/Rectangle%2031.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="80.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/dashboard/logo.png" />
+         </image>
+      </ImageView>
+      <Button layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutY="193.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutY="244.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/items.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutY="295.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/orders.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutY="346.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/users.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutY="636.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/settings.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3358ff" height="26.0" layoutX="78.0" layoutY="142.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="193.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="244.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="295.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="346.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="636.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+   </children>
+</AnchorPane>
