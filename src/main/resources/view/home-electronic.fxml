@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 
@@ -115,32 +116,31 @@
             </ImageView>
          </graphic>
       </Button>
-      <ImageView fitHeight="228.0" fitWidth="217.0" layoutX="114.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/dashboard/item-card.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="127.0" layoutY="367.0" style="-fx-font-size: 14;" text="Smart TV" />
-      <Label layoutX="127.0" layoutY="388.0" prefHeight="27.0" prefWidth="70.0" style="-fx-font-size: 18; -fx-text-fill: #3358FF;" text="Rs. 6300" />
-      <Label layoutX="199.0" layoutY="395.0" style="-fx-font-size: 12;" text="Onwards" />
-      <StackPane layoutX="127.0" layoutY="210.0" prefHeight="145.0" prefWidth="191.0" style="-fx-border-radius: 12; -fx-background-radius: 12;">
+      <Pane layoutX="608.0" layoutY="346.0" prefHeight="226.0" prefWidth="217.0" style="-fx-background-radius: 12; -fx-border-radius: 12;">
          <children>
-            <ImageView fitHeight="145.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/dashboard/smart_tv.png" />
-               </image>
-            </ImageView>
+            <StackPane layoutX="13.0" layoutY="13.0" prefHeight="145.0" prefWidth="191.0" style="-fx-border-radius: 12; -fx-background-radius: 12;">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/dashboard/smart_tv.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <Button graphicTextGap="10.0" layoutX="168.0" layoutY="20.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="28.0" styleClass="item-type-active" stylesheets="@../css/dashboard.css">
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/dashboard/add_to_cart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="13.0" layoutY="169.0" style="-fx-font-size: 14;" text="Smart TV" />
+            <Label layoutX="13.0" layoutY="190.0" prefHeight="27.0" prefWidth="70.0" style="-fx-font-size: 18; -fx-text-fill: #3358FF;" text="Rs. 6300" />
+            <Label layoutX="84.0" layoutY="198.0" style="-fx-font-size: 12;" text="Onwards" />
          </children>
-      </StackPane>
-      <Button graphicTextGap="10.0" layoutX="282.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="28.0" styleClass="item-type-active" stylesheets="@../css/dashboard.css">
-         <graphic>
-            <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/dashboard/add_to_cart.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      </Pane>
    </children>
    <stylesheets>
       <URL value="@../css/common.css" />
