@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" stylesheets="@../css/common.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
       <ImageView fitHeight="744.0" fitWidth="123.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -113,5 +115,35 @@
             </ImageView>
          </graphic>
       </Button>
+      <ImageView fitHeight="228.0" fitWidth="217.0" layoutX="114.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/dashboard/item-card.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="127.0" layoutY="367.0" style="-fx-font-size: 14;" text="Smart TV" />
+      <Label layoutX="127.0" layoutY="388.0" prefHeight="27.0" prefWidth="70.0" style="-fx-font-size: 18; -fx-text-fill: #3358FF;" text="Rs. 6300" />
+      <Label layoutX="199.0" layoutY="395.0" style="-fx-font-size: 12;" text="Onwards" />
+      <StackPane layoutX="127.0" layoutY="210.0" prefHeight="145.0" prefWidth="191.0" style="-fx-border-radius: 12; -fx-background-radius: 12;">
+         <children>
+            <ImageView fitHeight="145.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/smart_tv.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <Button graphicTextGap="10.0" layoutX="282.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="28.0" styleClass="item-type-active" stylesheets="@../css/dashboard.css">
+         <graphic>
+            <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/add_to_cart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
+   <stylesheets>
+      <URL value="@../css/common.css" />
+      <URL value="@../css/dashboard.css" />
+   </stylesheets>
 </AnchorPane>
