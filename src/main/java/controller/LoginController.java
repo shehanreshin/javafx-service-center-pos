@@ -88,10 +88,16 @@ public class LoginController {
             return;
         }
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Login successful");
-        alert.setContentText("You're in!");
-        alert.showAndWait();
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("./../view/home-electronic.fxml"))));
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Internal server error");
+            alert.showAndWait();
+            return;
+        }
     }
 
     private boolean isEmailValid() {
