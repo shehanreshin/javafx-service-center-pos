@@ -1,10 +1,14 @@
 package controller;
 
+import bo.custom.ItemBo;
+import bo.custom.impl.ItemBoImpl;
+import dto.ItemDto;
 import entity.Item;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -13,6 +17,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -27,27 +32,25 @@ public class HomeElectronicController implements Initializable {
     @FXML
     private GridPane gridPane;
 
-    private List<Item> itemList;
+    private List<ItemDto> itemList;
 
-    private List<Item> getData() {
-        List<Item> items = new ArrayList<>();
-        for (long i = 0; i < 8; i++) {
-            Item item = new Item();
-            item.setId(i);
-            item.setName("Smart TV");
-            item.setStartingPrice(5700.00);
-            item.setImg("../img/dashboard/smartphone.png");
-            items.add(item);
-        }
-        return items;
-    }
+    private ItemBo itemBo = new ItemBoImpl();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        itemList = new ArrayList<>(getData());
+        try {
+            itemList = itemBo.allItems();
+        } catch (SQLException | ClassNotFoundException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Internal server error");
+            alert.showAndWait();
+            return;
+        }
+
         int columns = 0, rows = 1;
         try {
-            for (Item item : itemList) {
+            for (ItemDto item : itemList) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("../view/item.fxml"));
 

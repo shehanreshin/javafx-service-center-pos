@@ -1,5 +1,6 @@
 package controller;
 
+import dto.ItemDto;
 import entity.Item;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,7 +22,7 @@ public class ItemController {
     private Label lblStartingPrice;
 
 
-    public void setData(Item item) {
+    public void setData(ItemDto item) {
         lblItemName.setText(item.getName());
         lblStartingPrice.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
