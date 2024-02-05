@@ -92,6 +92,7 @@ public class LoginController {
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("./../view/home-electronic.fxml"))));
         } catch (IOException e) {
+            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Internal server error");
