@@ -30,8 +30,8 @@
          </styleClass>
         </Button>
         <Label fx:id="lblItemName" layoutX="13.0" layoutY="169.0" style="-fx-font-size: 14;" />
-        <Label fx:id="lblStartingPrice" layoutX="13.0" layoutY="190.0" minHeight="27.0" minWidth="80.0" prefHeight="27.0" prefWidth="80.0" style="-fx-font-size: 18; -fx-text-fill: #3358FF;" />
-        <Label layoutX="96.0" layoutY="197.0" style="-fx-font-size: 12;" text="Onwards" />
+        <Label fx:id="lblStartingPrice" layoutX="13.0" layoutY="190.0" prefHeight="27.0" prefWidth="72.0" style="-fx-font-size: 18; -fx-text-fill: #3358FF;" />
+        <Label layoutX="84.0" layoutY="197.0" style="-fx-font-size: 12;" text="Onwards" />
     </children>
    <stylesheets>
       <URL value="@../css/common.css" />

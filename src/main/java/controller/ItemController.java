@@ -23,7 +23,7 @@ public class ItemController {
 
     public void setData(Item item) {
         lblItemName.setText(item.getName());
-        lblStartingPrice.setText("Rs. "+item.getStartingPrice());
+        lblStartingPrice.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
     }
 }
