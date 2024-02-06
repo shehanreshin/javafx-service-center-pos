@@ -6,6 +6,7 @@ import dao.custom.impl.ItemDaoImpl;
 import dto.ItemDto;
 import entity.Item;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ public class ItemBoImpl implements ItemBo {
                     item.getType(),
                     item.getName(),
                     item.getStartingPrice(),
+                    new Date(System.currentTimeMillis()+(item.getTimeToRepair()*3600)),
                     item.getImg()
             ));
         }

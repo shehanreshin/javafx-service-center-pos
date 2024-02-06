@@ -11,6 +11,7 @@ import javax.persistence.Convert;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -21,5 +22,6 @@ public class ItemDto {
     private ItemType type;
     private String name;
     private double startingPrice;
+    private Date collectionDate;
     private String img;
 }

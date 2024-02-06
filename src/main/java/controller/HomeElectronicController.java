@@ -2,6 +2,7 @@ package controller;
 
 import bo.custom.ItemBo;
 import bo.custom.impl.ItemBoImpl;
+import com.jfoenix.controls.JFXButton;
 import dto.ItemDto;
 import entity.Item;
 import javafx.fxml.FXML;
@@ -9,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -32,9 +34,35 @@ public class HomeElectronicController implements Initializable {
     @FXML
     private GridPane gridPane;
 
+    @FXML
+    private ScrollPane orderScrollPane;
+
+    @FXML
+    private GridPane orderGridPane;
+
+    @FXML
+    private JFXButton btnPlaceOrder;
+
+    @FXML
+    private JFXButton btnCancelOrder;
+
+    @FXML
+    private Label lblNoOfItems;
+
+    @FXML
+    private Label lblBasicCost;
+
+    @FXML
+    private Label lblAdditionalCost;
+
+    @FXML
+    private Label lblTotal;
+
     private List<ItemDto> itemList;
 
     private ItemBo itemBo = new ItemBoImpl();
+
+    private List<ItemDto> currentOrder = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -47,7 +75,10 @@ public class HomeElectronicController implements Initializable {
             alert.showAndWait();
             return;
         }
+        addItemsToGrid();
+    }
 
+    private void addItemsToGrid() {
         int columns = 0, rows = 1;
         try {
             for (ItemDto item : itemList) {

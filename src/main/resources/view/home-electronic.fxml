@@ -157,7 +157,7 @@
          </image>
       </ImageView>
       <JFXButton fx:id="btnPlaceOrder" layoutX="866.0" layoutY="620.0" prefHeight="37.0" prefWidth="214.0" text="Place Order" />
-      <JFXButton fx:id="btnCanceOrder" layoutX="866.0" layoutY="672.0" prefHeight="37.0" prefWidth="214.0" text="Cancel" />
+      <JFXButton fx:id="btnCancelOrder" layoutX="866.0" layoutY="672.0" prefHeight="37.0" prefWidth="214.0" text="Cancel" />
       <Label layoutX="866.0" layoutY="476.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Item" />
       <Label fx:id="lblNoOfItems" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="476.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
       <Label layoutX="866.0" layoutY="502.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Basic Cost" />
