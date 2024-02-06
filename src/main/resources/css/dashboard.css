@@ -20,3 +20,17 @@
     -fx-text-fill: #0F0F0F;
     -fx-border-radius: 5;
 }
+
+#btnPlaceOrder {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-background-color: #3358FF;
+    -fx-text-fill: #F7F7F7;
+}
+
+#btnCanceOrder {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-background-color: #C1CCFF;
+    -fx-text-fill: #F7F7F7;
+}
