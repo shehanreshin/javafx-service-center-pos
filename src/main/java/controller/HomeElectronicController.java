@@ -6,17 +6,22 @@ import com.jfoenix.controls.JFXButton;
 import db.CurrentOrder;
 import dto.ItemDto;
 import entity.Item;
+import entity.util.ItemType;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,6 +53,12 @@ public class HomeElectronicController implements Initializable {
     private JFXButton btnCancelOrder;
 
     @FXML
+    private Button btnElectronic;
+
+    @FXML
+    private Button btnElectrical;
+
+    @FXML
     private Label lblNoOfItems;
 
     @FXML
@@ -67,8 +78,10 @@ public class HomeElectronicController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ItemType itemType;
+        itemType = url.toString().endsWith("home-electronic.fxml") ? ItemType.ELECTRONIC : ItemType.ELECTRICAL;
         try {
-            itemList = itemBo.allItems();
+            itemList = itemBo.allItemsByType(itemType);
         } catch (SQLException | ClassNotFoundException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -77,6 +90,7 @@ public class HomeElectronicController implements Initializable {
             return;
         }
         addItemsToGrid();
+        updateCurrentOrdersDisplay();
     }
 
     private void addItemsToGrid() {
@@ -157,5 +171,25 @@ public class HomeElectronicController implements Initializable {
         lblBasicCost.setText(String.format("Rs. %.1f", basicCost));
         lblAdditionalCost.setText(String.format("Rs. %.1f", additionalCost));
         lblTotal.setText(String.format("Rs. %.1f",(basicCost+additionalCost)));
+    }
+
+    public void electricalButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/home-electrical.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    public void electronicButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/home-electronic.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 }

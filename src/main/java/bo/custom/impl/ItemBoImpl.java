@@ -5,6 +5,7 @@ import dao.custom.ItemDao;
 import dao.custom.impl.ItemDaoImpl;
 import dto.ItemDto;
 import entity.Item;
+import entity.util.ItemType;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -16,6 +17,23 @@ public class ItemBoImpl implements ItemBo {
     @Override
     public List<ItemDto> allItems() throws SQLException, ClassNotFoundException {
         List<Item> itemList = itemDao.getAll();
+        List<ItemDto> itemDtoList = new ArrayList<>();
+        for (Item item : itemList) {
+            itemDtoList.add(new ItemDto(
+                    item.getId(),
+                    item.getType(),
+                    item.getName(),
+                    item.getStartingPrice(),
+                    new Date(System.currentTimeMillis()+(item.getTimeToRepair()*3600)),
+                    item.getImg()
+            ));
+        }
+        return itemDtoList;
+    }
+
+    @Override
+    public List<ItemDto> allItemsByType(ItemType type) throws SQLException, ClassNotFoundException {
+        List<Item> itemList = itemDao.getAllByType(type);
         List<ItemDto> itemDtoList = new ArrayList<>();
         for (Item item : itemList) {
             itemDtoList.add(new ItemDto(

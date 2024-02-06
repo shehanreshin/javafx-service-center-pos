@@ -4,6 +4,8 @@ import dao.custom.ItemDao;
 import dao.util.HibernateUtil;
 import entity.Item;
 import entity.User;
+import entity.util.ItemType;
+import entity.util.ItemTypeConverter;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -37,5 +39,14 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public boolean delete(String value) throws SQLException, ClassNotFoundException {
         return false;
+    }
+
+    @Override
+    public List<Item> getAllByType(ItemType type) {
+        Session session = HibernateUtil.getSession();
+        int typeInt = new ItemTypeConverter().convertToDatabaseColumn(type);
+        List<Item> itemList = session.createQuery("FROM Item I WHERE I.type="+typeInt).list();
+        session.close();
+        return itemList;
     }
 }

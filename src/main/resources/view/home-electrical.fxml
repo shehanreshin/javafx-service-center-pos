@@ -100,20 +100,20 @@
          </image>
       </ImageView>
       <Label layoutX="118.0" layoutY="74.0" style="-fx-font-size: 11; -fx-text-fill: #333333;" text="Discover whatever you need easily" />
-      <Button fx:id="btnElectronic" graphicTextGap="10.0" layoutX="112.0" layoutY="137.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" styleClass="item-type-active" stylesheets="@../css/dashboard.css" text="Electronic">
+      <Button fx:id="btnElectronic" graphicTextGap="10.0" layoutX="112.0" layoutY="137.0" mnemonicParsing="false" onAction="#electronicButtonOnAction" prefHeight="35.0" prefWidth="122.0" styleClass="item-type-inactive" stylesheets="@../css/dashboard.css" text="Electronic">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/home/electronic-a.png" />
+                  <Image url="@../img/home/electronic-ia.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btnElectrical" graphicTextGap="10.0" layoutX="251.0" layoutY="137.0" mnemonicParsing="false" onAction="#electricalButtonOnAction" prefHeight="35.0" prefWidth="122.0" styleClass="item-type-inactive" stylesheets="@../css/dashboard.css" text="Electrical">
+      <Button fx:id="btnElectrical" graphicTextGap="10.0" layoutX="251.0" layoutY="137.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" styleClass="item-type-active" stylesheets="@../css/dashboard.css" text="Electrical">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/home/electrical-ia.png" />
+                  <Image url="@../img/home/electrical-a.png" />
                </image>
             </ImageView>
          </graphic>
