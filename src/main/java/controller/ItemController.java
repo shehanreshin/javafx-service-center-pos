@@ -4,10 +4,13 @@ import db.CurrentOrder;
 import dto.ItemDto;
 import entity.Item;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.io.IOException;
 
 public class ItemController {
     @FXML
@@ -23,14 +26,14 @@ public class ItemController {
     private Label lblStartingPrice;
 
 
-    public void setData(ItemDto item) {
+    public void setData(HomeElectronicController homeElectronicController, ItemDto item) {
         lblItemName.setText(item.getName());
         lblStartingPrice.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
 
         btnAddToCart.setOnAction(event -> {
             CurrentOrder.getInstance().getCurrentOrder().add(item);
-            System.out.println(CurrentOrder.getInstance().getCurrentOrder());
+            homeElectronicController.updateCurrentOrdersDisplay();
         });
     }
 }

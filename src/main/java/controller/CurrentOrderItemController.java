@@ -28,7 +28,7 @@ public class CurrentOrderItemController {
     @FXML
     private Button btnRemove;
 
-    public void setData(ItemDto item) {
+    public void setData(HomeElectronicController homeElectronicController, ItemDto item) {
         lblItemName.setText(item.getName());
         lblItemBasicCost.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
@@ -36,7 +36,7 @@ public class CurrentOrderItemController {
 
         btnRemove.setOnAction(event -> {
             removeButtonOnAction(item);
-            System.out.println(CurrentOrder.getInstance().getCurrentOrder());
+            homeElectronicController.updateCurrentOrdersDisplay();
         });
     }
 

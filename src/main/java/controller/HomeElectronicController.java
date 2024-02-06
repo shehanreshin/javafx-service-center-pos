@@ -3,6 +3,7 @@ package controller;
 import bo.custom.ItemBo;
 import bo.custom.impl.ItemBoImpl;
 import com.jfoenix.controls.JFXButton;
+import db.CurrentOrder;
 import dto.ItemDto;
 import entity.Item;
 import javafx.fxml.FXML;
@@ -88,7 +89,7 @@ public class HomeElectronicController implements Initializable {
                 Pane itemPane = fxmlLoader.load();
 
                 ItemController itemController = fxmlLoader.getController();
-                itemController.setData(item);
+                itemController.setData(this, item);
 
                 if (columns == 3) {
                     columns = 0;
@@ -99,7 +100,42 @@ public class HomeElectronicController implements Initializable {
                 GridPane.setMargin(itemPane, new Insets(8));
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Internal server error");
+            alert.showAndWait();
+            return;
+        }
+    }
+
+    public void updateCurrentOrdersDisplay() {
+        int columns = 0, rows = 1;
+        List<ItemDto> itemsInCurrentOrder = CurrentOrder.getInstance().getCurrentOrder();
+        try {
+            for (ItemDto item : itemsInCurrentOrder) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("../view/order-item.fxml"));
+
+                Pane currentOrderPane = fxmlLoader.load();
+
+                CurrentOrderItemController currentOrderItemController = fxmlLoader.getController();
+                currentOrderItemController.setData(this, item);
+
+                if (columns == 1) {
+                    columns = 0;
+                    rows++;
+                }
+
+                orderGridPane.add(currentOrderPane, columns++, rows);
+                GridPane.setMargin(currentOrderPane, new Insets(8));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Internal server error");
+            alert.showAndWait();
+            return;
         }
     }
 }
