@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="299.0" style="-fx-background-color: #F7F7F7;" stylesheets="@../css/common.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CurrentOrderItemController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="265.0" style="-fx-background-color: #F7F7F7;" stylesheets="@../css/common.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CurrentOrderItemController">
    <children>
       <StackPane layoutX="32.0" layoutY="11.0" prefHeight="70.0" prefWidth="70.0" style="-fx-border-radius: 12; -fx-background-radius: 12;">
          <children>
@@ -23,7 +23,7 @@
       <Label fx:id="lblItemCollectionDate" layoutX="115.0" layoutY="68.0" style="-fx-font-size: 8;" text="Collect on : 09/02/2024" />
       <Button fx:id="btnRemove" layoutX="206.0" layoutY="7.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: #F7F7F7; -fx-border-color: #F7F7F7;" textFill="TRANSPARENT">
          <graphic>
-            <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true" styleClass="btn-icon">
                <image>
                   <Image url="@../img/dashboard/cancel.png" />
                </image>

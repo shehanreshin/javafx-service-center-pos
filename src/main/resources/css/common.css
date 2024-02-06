@@ -2,7 +2,11 @@
     -fx-font-family: "Poppins", sans-serif;
 }
 
-JFXButton:hover, JButton:hover {
+JFXButton:hover, Button:hover {
+    -fx-cursor: hand;
+}
+
+.btn-icon {
     -fx-cursor: hand;
 }
 

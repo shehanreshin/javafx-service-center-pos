@@ -81,6 +81,7 @@ public class HomeElectronicController implements Initializable {
 
     private void addItemsToGrid() {
         int columns = 0, rows = 1;
+        gridPane.getChildren().clear();
         try {
             for (ItemDto item : itemList) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -110,6 +111,7 @@ public class HomeElectronicController implements Initializable {
 
     public void updateCurrentOrdersDisplay() {
         int columns = 0, rows = 1;
+        orderGridPane.getChildren().clear();
         List<ItemDto> itemsInCurrentOrder = CurrentOrder.getInstance().getCurrentOrder();
         try {
             for (ItemDto item : itemsInCurrentOrder) {
@@ -127,7 +129,7 @@ public class HomeElectronicController implements Initializable {
                 }
 
                 orderGridPane.add(currentOrderPane, columns++, rows);
-                GridPane.setMargin(currentOrderPane, new Insets(8));
+                GridPane.setMargin(currentOrderPane, new Insets(2));
             }
         } catch (IOException e) {
             e.printStackTrace();

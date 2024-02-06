@@ -35,12 +35,8 @@ public class CurrentOrderItemController {
         lblItemCollectionDate.setText("Collect on : "+item.getCollectionDate());
 
         btnRemove.setOnAction(event -> {
-            removeButtonOnAction(item);
+            CurrentOrder.getInstance().getCurrentOrder().remove(item);
             homeElectronicController.updateCurrentOrdersDisplay();
         });
-    }
-
-    public void removeButtonOnAction(ItemDto item) {
-        CurrentOrder.getInstance().getCurrentOrder().remove(item);
     }
 }

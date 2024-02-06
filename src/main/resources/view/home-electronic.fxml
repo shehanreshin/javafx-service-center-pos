@@ -118,9 +118,9 @@
             </ImageView>
          </graphic>
       </Button>
-      <ScrollPane fx:id="scrollPane" layoutX="112.0" layoutY="193.0" prefHeight="526.0" prefWidth="720.0">
+      <ScrollPane fx:id="scrollPane" layoutX="112.0" layoutY="193.0" prefHeight="526.0" prefWidth="720.0" style="-fx-background-color: #F4F4F4;">
          <content>
-            <GridPane fx:id="gridPane">
+            <GridPane fx:id="gridPane" style="-fx-background-color: #F4F4F4;">
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
@@ -137,9 +137,9 @@
             <Image url="@../img/dashboard/current_order.png" />
          </image>
       </ImageView>
-      <ScrollPane fx:id="orderScrollPane" layoutX="834.0" layoutY="89.0" prefHeight="335.0" prefWidth="299.0">
+      <ScrollPane fx:id="orderScrollPane" layoutX="834.0" layoutY="76.0" prefHeight="348.0" prefWidth="299.0" style="-fx-background-color: #F7F7F7;">
          <content>
-            <GridPane fx:id="orderGridPane">
+            <GridPane fx:id="orderGridPane" style="-fx-background-color: #F7F7F7;">
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
