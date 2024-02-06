@@ -24,5 +24,6 @@ public class Item {
 
     private String name;
     private double startingPrice;
+    private int timeToRepair;
     private String img;
 }
