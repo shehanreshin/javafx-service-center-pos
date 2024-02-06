@@ -110,9 +110,14 @@ public class HomeElectronicController implements Initializable {
     }
 
     public void updateCurrentOrdersDisplay() {
-        int columns = 0, rows = 1;
         orderGridPane.getChildren().clear();
         List<ItemDto> itemsInCurrentOrder = CurrentOrder.getInstance().getCurrentOrder();
+        displayItemsToCurrentOrder(itemsInCurrentOrder);
+        displayOrderInfo(itemsInCurrentOrder);
+    }
+
+    private void displayItemsToCurrentOrder(List<ItemDto> itemsInCurrentOrder) {
+        int columns = 0, rows = 1;
         try {
             for (ItemDto item : itemsInCurrentOrder) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -139,5 +144,18 @@ public class HomeElectronicController implements Initializable {
             alert.showAndWait();
             return;
         }
+    }
+
+    private void displayOrderInfo(List<ItemDto> itemsInCurrentOrder) {
+        int noOfItems = 0;
+        double basicCost = 0, additionalCost = 0;
+        for (ItemDto itemDto : itemsInCurrentOrder) {
+            noOfItems++;
+            basicCost += itemDto.getStartingPrice();
+        }
+        lblNoOfItems.setText(String.format("%d Items", noOfItems));
+        lblBasicCost.setText(String.format("Rs. %.1f", basicCost));
+        lblAdditionalCost.setText(String.format("Rs. %.1f", additionalCost));
+        lblTotal.setText(String.format("Rs. %.1f",(basicCost+additionalCost)));
     }
 }
