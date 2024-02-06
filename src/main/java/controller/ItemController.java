@@ -1,5 +1,6 @@
 package controller;
 
+import db.CurrentOrder;
 import dto.ItemDto;
 import entity.Item;
 import javafx.fxml.FXML;
@@ -26,5 +27,10 @@ public class ItemController {
         lblItemName.setText(item.getName());
         lblStartingPrice.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
+
+        btnAddToCart.setOnAction(event -> {
+            CurrentOrder.getInstance().getCurrentOrder().add(item);
+            System.out.println(CurrentOrder.getInstance().getCurrentOrder());
+        });
     }
 }

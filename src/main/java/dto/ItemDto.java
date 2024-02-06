@@ -1,11 +1,9 @@
 package dto;
 
+import entity.Item;
 import entity.util.ItemType;
 import entity.util.ItemTypeConverter;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Convert;
 import javax.persistence.GeneratedValue;
@@ -17,6 +15,7 @@ import java.sql.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class ItemDto {
     private Long id;
     private ItemType type;
@@ -24,4 +23,14 @@ public class ItemDto {
     private double startingPrice;
     private Date collectionDate;
     private String img;
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof ItemDto && ((ItemDto) obj).id.equals(this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id.intValue();
+    }
 }

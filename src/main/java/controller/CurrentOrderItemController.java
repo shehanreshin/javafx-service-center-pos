@@ -1,7 +1,9 @@
 package controller;
 
+import db.CurrentOrder;
 import dto.ItemDto;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,9 +33,14 @@ public class CurrentOrderItemController {
         lblItemBasicCost.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
         lblItemCollectionDate.setText("Collect on : "+item.getCollectionDate());
+
+        btnRemove.setOnAction(event -> {
+            removeButtonOnAction(item);
+            System.out.println(CurrentOrder.getInstance().getCurrentOrder());
+        });
     }
 
-    public void removeButtonOnAction(List<ItemDto> currentOrder, ItemDto item) {
-        currentOrder.remove(item);
+    public void removeButtonOnAction(ItemDto item) {
+        CurrentOrder.getInstance().getCurrentOrder().remove(item);
     }
 }

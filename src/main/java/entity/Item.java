@@ -26,4 +26,14 @@ public class Item {
     private double startingPrice;
     private int timeToRepair;
     private String img;
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Item && ((Item) obj).id.equals(this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id.intValue();
+    }
 }
