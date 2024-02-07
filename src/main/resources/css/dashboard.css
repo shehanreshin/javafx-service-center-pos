@@ -1,0 +1,38 @@
+.root * {
+    -fx-padding: 0;
+}
+
+.nav-item {
+    -fx-background-color: #F7F7F7;
+    -fx-border-color: #F7F7F7;
+}
+
+.item-type-active {
+    -fx-background-color: #3358FF;
+    -fx-border-color: #3358FF;
+    -fx-text-fill: #F7F7F7;
+    -fx-border-radius: 5;
+}
+
+.item-type-inactive {
+    -fx-background-color: #F7F7F7;
+    -fx-border-color: #F7F7F7;
+    -fx-text-fill: #0F0F0F;
+    -fx-border-radius: 5;
+}
+
+#btnPlaceOrder {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-background-color: #3358FF;
+    -fx-text-fill: #F7F7F7;
+    -fx-font-size: 15;
+}
+
+#btnCancelOrder {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-background-color: #C1CCFF;
+    -fx-text-fill: #F7F7F7;
+    -fx-font-size: 15;
+}

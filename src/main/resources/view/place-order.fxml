@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" prefHeight="517.0" prefWidth="361.0" style="-fx-background-color: #F7F7F7; -fx-border-color: #3358FF; -fx-border-width: 3; -fx-background-radius: 12; -fx-border-radius: 12;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
+   <children>
+      <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="142.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/dashboard/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="145.0" layoutY="70.0" style="-fx-font-size: 14;" text="Place Order" />
+      <Label layoutX="31.0" layoutY="100.0" style="-fx-font-size: 10;" text="Order ID : #" />
+      <Button fx:id="btnAddCustomer" graphicTextGap="8.0" layoutX="31.0" layoutY="120.0" mnemonicParsing="false" onAction="#addCustomerButtonOnAction" prefHeight="23.0" prefWidth="111.0" style="-fx-font-size: 10; -fx-text-fill: #F7F7F7; -fx-background-color: #3358FF;" text="Select Customer">
+         <graphic>
+            <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/place-order/plus.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnPlaceOrder" layoutX="31.0" layoutY="466.0" mnemonicParsing="false" onAction="#placeOrderButtonOnAction" prefHeight="40.0" prefWidth="302.0" style="-fx-font-size: 14; -fx-text-fill: #F7F7F7; -fx-background-color: #3358FF;" text="Place Order" />
+      <Label fx:id="lblOrderId" layoutX="83.0" layoutY="100.0" prefHeight="15.0" prefWidth="111.0" style="-fx-font-size: 10;" />
+      <TextField fx:id="txtCustomerContact" editable="false" layoutX="31.0" layoutY="154.0" prefHeight="27.0" prefWidth="143.0" style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" />
+      <TextField fx:id="txtCustomerName" editable="false" layoutX="188.0" layoutY="154.0" prefHeight="27.0" prefWidth="143.0" style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" />
+      <Label layoutX="31.0" layoutY="189.0" style="-fx-font-size: 10;" text="Customer Contact No." />
+      <Label layoutX="188.0" layoutY="189.0" style="-fx-font-size: 10;" text="Customer Name" />
+      <Label layoutX="31.0" layoutY="218.0" style="-fx-font-size: 10;" text="Email Address" />
+      <TextField fx:id="txtCustomerEmail" editable="false" layoutX="31.0" layoutY="239.0" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" />
+      <Label layoutX="31.0" layoutY="281.0" style="-fx-font-size: 10;" text="Description" />
+      <TextField fx:id="txtDescription" layoutX="31.0" layoutY="302.0" prefHeight="31.0" prefWidth="302.0" promptText="Add description here..." style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" />
+      <TableView fx:id="tblItems" layoutX="33.0" layoutY="342.0" prefHeight="88.0" prefWidth="302.0">
+        <columns>
+          <TableColumn fx:id="colItem" prefWidth="181.0" text="Item" />
+          <TableColumn fx:id="colBasicCost" prefWidth="103.0" text="Basic Cost" />
+        </columns>
+      </TableView>
+      <Label layoutX="31.0" layoutY="439.0" style="-fx-font-size: 12;" text="Total : Rs. " />
+      <Label fx:id="lblTotal" layoutX="84.0" layoutY="439.0" prefHeight="17.0" prefWidth="121.0" style="-fx-font-size: 12;" />
+      <Button fx:id="btnClose" layoutX="328.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: #F7F7F7;">
+         <graphic>
+            <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/dashboard/cancel.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@../css/common.css" />
+      <URL value="@../css/place-order.css" />
+   </stylesheets>
+</AnchorPane>

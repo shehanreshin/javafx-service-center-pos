@@ -60,7 +60,7 @@ public class UserBoImpl implements UserBo {
     public UserDto searchUserByEmail(String email) throws SQLException, ClassNotFoundException {
         User selectedUser = getUserEntityByEmail(email);
         return selectedUser == null ? null : new UserDto(
-                selectedUser.getUserId(),
+                selectedUser.getId(),
                 selectedUser.getName(),
                 selectedUser.getEmail(),
                 selectedUser.getPassword(),

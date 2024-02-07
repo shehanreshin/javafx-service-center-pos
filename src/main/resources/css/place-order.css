@@ -1,0 +1,8 @@
+.table-view .column-header {
+    -fx-font-size: 10;
+    -fx-background-color: #3358FF;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #F7F7F7;
+}
