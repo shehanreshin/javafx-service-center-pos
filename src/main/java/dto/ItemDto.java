@@ -21,7 +21,6 @@ public class ItemDto {
     private ItemType type;
     private String name;
     private double startingPrice;
-    private Date collectionDate;
     private String img;
 
     @Override

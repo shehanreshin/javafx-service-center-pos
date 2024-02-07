@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userId;
+    private Integer id;
 
     private String name;
     private String email;

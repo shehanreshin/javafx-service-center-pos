@@ -28,7 +28,6 @@ public class CurrentOrderItemController {
         lblItemName.setText(item.getName());
         lblItemBasicCost.setText("Rs. "+ (int) item.getStartingPrice());
         imgItem.setImage(new Image(getClass().getResourceAsStream(item.getImg())));
-        lblItemCollectionDate.setText("Collect on : "+item.getCollectionDate());
 
         btnRemove.setOnAction(event -> {
             CurrentOrder.getInstance().getCurrentOrder().remove(item);
