@@ -11,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="517.0" prefWidth="361.0" style="-fx-background-color: #F7F7F7; -fx-border-color: #3358FF; -fx-border-width: 3; -fx-background-radius: 12; -fx-border-radius: 12;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
+<AnchorPane fx:id="pane" prefHeight="517.0" prefWidth="361.0" style="-fx-background-color: #F7F7F7; -fx-border-color: #3358FF; -fx-border-width: 3; -fx-background-radius: 12; -fx-border-radius: 12;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
    <children>
       <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="142.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -41,18 +41,17 @@
       <TextField fx:id="txtDescription" layoutX="31.0" layoutY="302.0" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" text="Add description here..." />
       <ScrollPane layoutX="30.0" layoutY="343.0" prefHeight="88.0" prefWidth="302.0">
          <content>
-            <TableView prefHeight="88.0" prefWidth="283.0">
+            <TableView fx:id="tblItems" prefHeight="88.0" prefWidth="283.0">
               <columns>
-                <TableColumn fx:id="colItem" prefWidth="75.0" text="Item" />
-                <TableColumn fx:id="colBasicCost" prefWidth="91.0" text="Basic Cost" />
-                  <TableColumn fx:id="colAdditionalCost" prefWidth="116.0" text="Additional Cost" />
+                <TableColumn fx:id="colItem" prefWidth="144.0" text="Item" />
+                <TableColumn fx:id="colBasicCost" prefWidth="138.0" text="Basic Cost" />
               </columns>
             </TableView>
          </content>
       </ScrollPane>
       <Label layoutX="31.0" layoutY="439.0" style="-fx-font-size: 12;" text="Total : Rs. " />
       <Label fx:id="lblTotal" layoutX="84.0" layoutY="439.0" prefHeight="17.0" prefWidth="121.0" style="-fx-font-size: 12;" />
-      <Button fx:id="btnClose" layoutX="328.0" layoutY="2.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: #F7F7F7;">
+      <Button fx:id="btnClose" layoutX="328.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: #F7F7F7;">
          <graphic>
             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                <image>

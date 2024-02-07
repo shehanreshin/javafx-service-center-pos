@@ -19,7 +19,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,6 +75,8 @@ public class HomeController implements Initializable {
     private ItemBo itemBo = new ItemBoImpl();
 
     private List<ItemDto> currentOrder = new ArrayList<>();
+
+    private double x, y;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -193,11 +197,26 @@ public class HomeController implements Initializable {
 
     public void placeOrderButtonOnAction(ActionEvent actionEvent) {
         Stage stage = new Stage();
+        Scene scene;
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/place-order.fxml"))));
+            scene = new Scene(FXMLLoader.load(getClass().getResource("../view/place-order.fxml")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        scene.setFill(Color.TRANSPARENT);
+
+        scene.setOnMousePressed(event -> {
+            x = event.getSceneX();
+            y = event.getSceneY();
+        });
+
+        scene.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - x);
+            stage.setY(event.getScreenY() - y);
+        });
+
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
     }
 
