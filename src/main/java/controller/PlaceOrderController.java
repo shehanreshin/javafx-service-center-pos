@@ -61,12 +61,21 @@ public class PlaceOrderController implements Initializable {
     @FXML
     private Button btnClose;
 
+    private int total = 0;
+
     public void closeButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) pane.getScene().getWindow();
         stage.close();
     }
 
     public void placeOrderButtonOnAction(ActionEvent actionEvent) {
+        if (isAnyFieldEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Empty Fields");
+            alert.setContentText("Please fill all the fields");
+            alert.showAndWait();
+            return;
+        }
     }
 
     public void addCustomerButtonOnAction(ActionEvent actionEvent) {
@@ -85,7 +94,6 @@ public class PlaceOrderController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<ItemDto> currentOrder = CurrentOrder.getInstance().getCurrentOrder();
-        int total = 0;
         for (ItemDto itemDto : currentOrder) {
             total += itemDto.getStartingPrice();
         }
@@ -105,5 +113,10 @@ public class PlaceOrderController implements Initializable {
         txtCustomerContact.setText(customer.getContactNumber());
         txtCustomerName.setText(customer.getName());
         txtCustomerEmail.setText(customer.getEmail());
+    }
+
+    private boolean isAnyFieldEmpty() {
+        return txtCustomerContact.getText().isEmpty() || txtCustomerEmail.getText().isEmpty() ||
+                txtCustomerName.getText().isEmpty() || txtDescription.getText().isEmpty();
     }
 }

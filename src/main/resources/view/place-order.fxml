@@ -19,7 +19,7 @@
       </ImageView>
       <Label layoutX="145.0" layoutY="70.0" style="-fx-font-size: 14;" text="Place Order" />
       <Label layoutX="31.0" layoutY="100.0" style="-fx-font-size: 10;" text="Order ID : #" />
-      <Button fx:id="btnAddCustomer" layoutX="31.0" layoutY="120.0" mnemonicParsing="false" onAction="#addCustomerButtonOnAction" prefHeight="23.0" prefWidth="100.0" style="-fx-font-size: 10; -fx-text-fill: #F7F7F7; -fx-background-color: #3358FF;" text="Add Customer">
+      <Button fx:id="btnAddCustomer" graphicTextGap="8.0" layoutX="31.0" layoutY="120.0" mnemonicParsing="false" onAction="#addCustomerButtonOnAction" prefHeight="23.0" prefWidth="111.0" style="-fx-font-size: 10; -fx-text-fill: #F7F7F7; -fx-background-color: #3358FF;" text="Select Customer">
          <graphic>
             <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                <image>

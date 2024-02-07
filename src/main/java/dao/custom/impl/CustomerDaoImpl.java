@@ -6,6 +6,7 @@ import dto.CustomerDto;
 import entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -38,8 +39,10 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public Customer getByContactNumber(String contactNumber) {
         Session session = HibernateUtil.getSession();
-        List<Customer> customerList = session.createQuery("FROM Customer WHERE contactNumber="+contactNumber).list();
+        Query query = session.createQuery("FROM Customer WHERE contactNumber="+contactNumber);
+        query.setMaxResults(1);
+        Customer customer = (Customer) query.uniqueResult();
         session.close();
-        return customerList.isEmpty() ? null : customerList.get(0);
+        return customer;
     }
 }
