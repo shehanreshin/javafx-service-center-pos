@@ -1,17 +1,21 @@
 package controller;
 
 import db.CurrentOrder;
+import dto.CustomerDto;
 import dto.ItemDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +70,16 @@ public class PlaceOrderController implements Initializable {
     }
 
     public void addCustomerButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/input-customer-number.fxml"));
+        try {
+            stage.setScene(new Scene(fxmlLoader.load()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        InputCustomerNumberController inputCustomerNumberController = fxmlLoader.getController();
+        inputCustomerNumberController.setPlaceOrderController(this);
+        stage.showAndWait();
     }
 
     @Override
@@ -85,5 +99,11 @@ public class PlaceOrderController implements Initializable {
     private void loadItemTable(List<ItemDto> currentOrder) {
         ObservableList<ItemDto> observableList = FXCollections.observableArrayList(currentOrder);
         tblItems.setItems(observableList);
+    }
+
+    public void setCustomerInfo(CustomerDto customer) {
+        txtCustomerContact.setText(customer.getContactNumber());
+        txtCustomerName.setText(customer.getName());
+        txtCustomerEmail.setText(customer.getEmail());
     }
 }

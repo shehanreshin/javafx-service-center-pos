@@ -153,7 +153,6 @@ public class HomeController implements Initializable {
                 GridPane.setMargin(currentOrderPane, new Insets(2));
             }
         } catch (IOException e) {
-            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Internal server error");

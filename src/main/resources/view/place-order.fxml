@@ -37,7 +37,7 @@
       <Label layoutX="31.0" layoutY="218.0" style="-fx-font-size: 10;" text="Email Address" />
       <TextField fx:id="txtCustomerEmail" editable="false" layoutX="31.0" layoutY="239.0" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" />
       <Label layoutX="31.0" layoutY="281.0" style="-fx-font-size: 10;" text="Description" />
-      <TextField fx:id="txtDescription" layoutX="31.0" layoutY="302.0" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" text="Add description here..." />
+      <TextField fx:id="txtDescription" layoutX="31.0" layoutY="302.0" prefHeight="31.0" prefWidth="302.0" promptText="Add description here..." style="-fx-background-color: #E2E7FF; -fx-font-size: 10;" />
       <TableView fx:id="tblItems" layoutX="33.0" layoutY="342.0" prefHeight="88.0" prefWidth="302.0">
         <columns>
           <TableColumn fx:id="colItem" prefWidth="181.0" text="Item" />
