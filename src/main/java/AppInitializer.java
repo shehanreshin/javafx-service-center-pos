@@ -18,7 +18,7 @@ public class AppInitializer extends Application {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        primaryStage.setTitle("   E&E Service Center"); //spaces for margin
+        primaryStage.setTitle("   Electroshack"); //spaces for margin
         primaryStage.setResizable(false);
         primaryStage.show();
     }
