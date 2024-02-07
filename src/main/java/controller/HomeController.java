@@ -5,7 +5,6 @@ import bo.custom.impl.ItemBoImpl;
 import com.jfoenix.controls.JFXButton;
 import db.CurrentOrder;
 import dto.ItemDto;
-import entity.Item;
 import entity.util.ItemType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +19,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class HomeElectronicController implements Initializable {
+public class HomeController implements Initializable {
     @FXML
     private AnchorPane pane;
 

@@ -45,7 +45,7 @@ public class ItemDaoImpl implements ItemDao {
     public List<Item> getAllByType(ItemType type) {
         Session session = HibernateUtil.getSession();
         int typeInt = new ItemTypeConverter().convertToDatabaseColumn(type);
-        List<Item> itemList = session.createQuery("FROM Item I WHERE I.type="+typeInt).list();
+        List<Item> itemList = session.createQuery("FROM Item WHERE type="+typeInt).list();
         session.close();
         return itemList;
     }

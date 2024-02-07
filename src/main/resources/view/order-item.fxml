@@ -11,17 +11,13 @@
    <children>
       <StackPane layoutX="32.0" layoutY="11.0" prefHeight="70.0" prefWidth="70.0" style="-fx-border-radius: 12; -fx-background-radius: 12;">
          <children>
-            <ImageView fx:id="imgItem" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/dashboard/smart_tv.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgItem" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <Label fx:id="lblItemName" alignment="TOP_LEFT" layoutX="115.0" layoutY="14.0" prefHeight="33.0" prefWidth="100.0" style="-fx-font-size: 15;" text="Smart TV" />
-      <Label fx:id="lblItemBasicCost" layoutX="115.0" layoutY="46.0" style="-fx-font-size: 16; -fx-text-fill: #3358FF;" text="Rs. 6300" />
-      <Label fx:id="lblItemCollectionDate" layoutX="115.0" layoutY="68.0" style="-fx-font-size: 8;" text="Collect on : 09/02/2024" />
-      <Button fx:id="btnRemove" layoutX="206.0" layoutY="7.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: #F7F7F7; -fx-border-color: #F7F7F7;" textFill="TRANSPARENT">
+      <Label fx:id="lblItemName" alignment="TOP_LEFT" layoutX="115.0" layoutY="14.0" maxWidth="100.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size: 14;" wrapText="true" />
+      <Label fx:id="lblItemBasicCost" layoutX="115.0" layoutY="48.0" style="-fx-font-size: 16; -fx-text-fill: #3358FF;" />
+      <Label fx:id="lblItemCollectionDate" layoutX="115.0" layoutY="68.0" style="-fx-font-size: 8;" />
+      <Button fx:id="btnRemove" layoutX="206.0" layoutY="14.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: #F7F7F7; -fx-border-color: #F7F7F7;" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true" styleClass="btn-icon">
                <image>
