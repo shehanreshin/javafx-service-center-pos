@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ public class AppInitializer extends Application {
         }
         primaryStage.setTitle("   Electroshack"); //spaces for margin
         primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image(("./img/logo.png")));
         primaryStage.show();
     }
 }
