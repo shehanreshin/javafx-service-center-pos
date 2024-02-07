@@ -1,5 +1,7 @@
 package entity;
 
+import entity.util.ItemStatus;
+import entity.util.ItemStatusConverter;
 import entity.util.ItemType;
 import entity.util.ItemTypeConverter;
 import lombok.AllArgsConstructor;
@@ -24,7 +26,7 @@ public class Item {
 
     private String name;
     private double startingPrice;
-    private int timeToRepair;
+
     private String img;
 
     @Override
