@@ -2,10 +2,12 @@ package controller;
 
 import bo.custom.ItemBo;
 import bo.custom.impl.ItemBoImpl;
+import bo.util.ApplicationState;
 import com.jfoenix.controls.JFXButton;
 import db.CurrentOrder;
 import dto.ItemDto;
 import entity.util.ItemType;
+import entity.util.UserRole;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -228,6 +230,13 @@ public class HomeController implements Initializable {
     }
 
     public void usersButtonOnAction(ActionEvent actionEvent) {
+        if (ApplicationState.getInstance().getLoggedInUser().getRole() != UserRole.ADMIN) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Insufficient Privileges");
+            alert.setContentText("You do not have the authorization to do that");
+            alert.showAndWait();
+            return;
+        }
         Stage stage = (Stage) pane.getScene().getWindow();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/user-management.fxml"))));
@@ -238,20 +247,81 @@ public class HomeController implements Initializable {
     }
 
     public void homeButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/home-electronic.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     public void reportsButtonOnAction(ActionEvent actionEvent) {
+        if (ApplicationState.getInstance().getLoggedInUser().getRole() != UserRole.ADMIN) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Insufficient Privileges");
+            alert.setContentText("You do not have the authorization to do that");
+            alert.showAndWait();
+            return;
+        }
+
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/reports.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     public void itemsButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/items.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     public void ordersButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/orders.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     public void settingsButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/settings.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     public void logoutButtonOnAction(ActionEvent actionEvent) {
+        ApplicationState.getInstance().setLoggedInUser(null);
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/login-page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    public void customersButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/customers.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 }
