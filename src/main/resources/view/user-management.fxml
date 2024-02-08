@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserManagementController">
@@ -99,7 +101,7 @@
             <Image url="@../img/user-management/manage_users.png" />
          </image>
       </ImageView>
-      <Label layoutX="118.0" layoutY="74.0" style="-fx-font-size: 11; -fx-text-fill: #333333;" text="Managing users has never been easier" />
+      <Label layoutX="118.0" layoutY="74.0" style="-fx-font-size: 11; -fx-text-fill: #333333;" text="Manage whatever you need easily" />
       <ImageView fitHeight="744.0" fitWidth="299.0" layoutX="834.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/dashboard/order-card.png" />
@@ -110,23 +112,40 @@
             <Image url="@../img/user-management/add_user.png" />
          </image>
       </ImageView>
-      <ScrollPane fx:id="orderScrollPane" layoutX="834.0" layoutY="76.0" prefHeight="348.0" prefWidth="299.0" style="-fx-background-color: #F7F7F7;">
-         <content>
-            <GridPane fx:id="orderGridPane" style="-fx-background-color: #F7F7F7;">
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </content>
-      </ScrollPane>
       <JFXButton fx:id="btnAddUser" layoutX="866.0" layoutY="620.0" onAction="#addUserButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="proceed-button" text="Add User" />
       <JFXButton fx:id="btnCancel" layoutX="866.0" layoutY="672.0" onAction="#cancelButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="cancel-button" text="Cancel" />
       <Label fx:id="lblNoOfItems" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="476.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
       <Label fx:id="lblBasicCost" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="502.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
       <Label fx:id="lblAdditionalCost" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="528.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
+      <TableView fx:id="tblUsers" layoutX="112.0" layoutY="118.0" prefHeight="588.0" prefWidth="690.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="81.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="169.0" text="Name" />
+            <TableColumn fx:id="colName" prefWidth="200.0" text="Email" />
+            <TableColumn fx:id="colRole" prefWidth="115.0" text="Role" />
+            <TableColumn fx:id="colStatus" prefWidth="125.0" text="Status" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtName" layoutX="865.0" layoutY="103.0" prefHeight="37.0" prefWidth="233.0" promptText="Enter name...">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="865.0" layoutY="168.0" prefHeight="37.0" prefWidth="233.0" promptText="Enter email....">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField fx:id="txtPassword" layoutX="865.0" layoutY="233.0" prefHeight="37.0" prefWidth="233.0" promptText="Enter password...">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <JFXComboBox fx:id="cmbxRole" focusColor="#405aa800" layoutX="865.0" layoutY="298.0" prefHeight="37.0" prefWidth="150.0" promptText="Role" unFocusColor="#4d4d4d00" />
    </children>
    <stylesheets>
       <URL value="@../css/common.css" />
       <URL value="@../css/dashboard.css" />
+      <URL value="@../css/users.css" />
    </stylesheets>
 </AnchorPane>

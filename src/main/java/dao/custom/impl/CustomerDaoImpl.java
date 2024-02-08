@@ -50,7 +50,9 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public Customer getByContactNumber(String contactNumber) {
         Session session = HibernateUtil.getSession();
-        Query query = session.createQuery("FROM Customer WHERE contactNumber="+contactNumber);
+        Query query = session.createNativeQuery("SELECT * FROM Customer where contactNumber = ?", Customer.class);
+        // Had to use native query here because of a bug with hibernate queries
+        query.setParameter(1, contactNumber);
         query.setMaxResults(1);
         Customer customer = (Customer) query.uniqueResult();
         session.close();
