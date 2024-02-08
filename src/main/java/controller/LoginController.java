@@ -89,9 +89,9 @@ public class LoginController {
             return;
         }
 
+        UserDto user;
         try {
-            UserDto user = userBo.searchUserByEmail(txtEmail.getText());
-            ApplicationState.getInstance().setLoggedInUser(user);
+           user = userBo.searchUserByEmail(txtEmail.getText());
         } catch (SQLException | ClassNotFoundException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -100,6 +100,15 @@ public class LoginController {
             return;
         }
 
+        if (!user.isActive()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Disabled Account");
+            alert.setContentText("This account is disabled");
+            alert.showAndWait();
+            return;
+        }
+
+        ApplicationState.getInstance().setLoggedInUser(user);
         Stage stage = (Stage) pane.getScene().getWindow();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("./../view/home-electronic.fxml"))));
