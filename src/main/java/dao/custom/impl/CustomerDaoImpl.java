@@ -4,6 +4,7 @@ import dao.custom.CustomerDao;
 import dao.util.HibernateUtil;
 import dto.CustomerDto;
 import entity.Customer;
+import entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -34,6 +35,16 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public boolean delete(String value) throws SQLException, ClassNotFoundException {
         return false;
+    }
+
+    @Override
+    public Customer getById(Long id) throws SQLException, ClassNotFoundException {
+        Session session = HibernateUtil.getSession();
+        Query query = session.createQuery("FROM Customer WHERE id="+id);
+        query.setMaxResults(1);
+        Customer customer = (Customer) query.uniqueResult();
+        session.close();
+        return customer;
     }
 
     @Override

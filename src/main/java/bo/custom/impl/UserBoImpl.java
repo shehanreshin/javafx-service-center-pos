@@ -93,7 +93,7 @@ public class UserBoImpl implements UserBo {
     }
 
     private void generateOtp() {
-        currentOtp = (int) (Math.random() * 100000) + 10000;
+        currentOtp = (int) (Math.random() * 10000) + 10000;
     }
 
     @Override

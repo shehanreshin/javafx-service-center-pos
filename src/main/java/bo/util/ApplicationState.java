@@ -13,15 +13,15 @@ public class ApplicationState {
         return applicationState == null ? (applicationState = new ApplicationState()) : applicationState;
     }
 
-    private UserDto getLoggedInUser() {
+    public UserDto getLoggedInUser() {
         return loggedInUser;
     }
 
-    private UserRole getRoleOfLoggedInUser() {
-        return loggedInUser.getRole();
+    public boolean isUserLoggedIn() {
+        return loggedInUser == null;
     }
 
-    private boolean isUserLoggedIn() {
-        return loggedInUser == null;
+    public void setLoggedInUser(UserDto user) {
+        loggedInUser = user;
     }
 }

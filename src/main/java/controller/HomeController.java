@@ -197,8 +197,11 @@ public class HomeController implements Initializable {
     public void placeOrderButtonOnAction(ActionEvent actionEvent) {
         Stage stage = new Stage();
         Scene scene;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/place-order.fxml"));
         try {
-            scene = new Scene(FXMLLoader.load(getClass().getResource("../view/place-order.fxml")));
+            scene = new Scene(fxmlLoader.load());
+            PlaceOrderController placeOrderController = fxmlLoader.getController();
+            placeOrderController.setHomeController(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

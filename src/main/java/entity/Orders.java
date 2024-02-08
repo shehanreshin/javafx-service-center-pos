@@ -37,6 +37,15 @@ public class Orders {
     private double basicCost;
     private double additionalCost;
 
+    public Orders(Customer customer, User user, String description, Date date, double basicCost, double additionalCost) {
+        this.customer = customer;
+        this.user = user;
+        this.description = description;
+        this.date = date;
+        this.basicCost = basicCost;
+        this.additionalCost = additionalCost;
+    }
+
     @Override
     public boolean equals(Object obj) {
         return obj instanceof Orders && ((Orders) obj).id.equals(this.id);

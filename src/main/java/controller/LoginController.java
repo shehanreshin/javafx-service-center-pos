@@ -2,6 +2,7 @@ package controller;
 
 import bo.custom.UserBo;
 import bo.custom.impl.UserBoImpl;
+import bo.util.ApplicationState;
 import com.jfoenix.controls.JFXButton;
 import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
@@ -85,6 +86,17 @@ public class LoginController {
         if (!isValidUser) {
             lblPasswordError.setText("Incorrect password");
             lblPasswordError.setVisible(true);
+            return;
+        }
+
+        try {
+            UserDto user = userBo.searchUserByEmail(txtEmail.getText());
+            ApplicationState.getInstance().setLoggedInUser(user);
+        } catch (SQLException | ClassNotFoundException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Internal server error");
+            alert.showAndWait();
             return;
         }
 

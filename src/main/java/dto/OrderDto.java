@@ -20,14 +20,25 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderDto {
     private Long id;
-    private Customer customer;
-    private User user;
-    private List<OrderItem> orderItems = new ArrayList<>();
+    private CustomerDto customer;
+    private UserDto user;
+    private List<ItemDto> items = new ArrayList<>();
     private String description;
     private Date date;
     private double basicCost;
     private double additionalCost;
     private double totalCost;
+
+    public OrderDto(CustomerDto customer, UserDto user, List<ItemDto> items, String description, Date date, double basicCost, double additionalCost, double totalCost) {
+        this.customer = customer;
+        this.user = user;
+        this.items = items;
+        this.description = description;
+        this.date = date;
+        this.basicCost = basicCost;
+        this.additionalCost = additionalCost;
+        this.totalCost = totalCost;
+    }
 
     @Override
     public boolean equals(Object obj) {
