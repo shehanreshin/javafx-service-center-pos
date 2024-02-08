@@ -21,7 +21,7 @@
     -fx-border-radius: 5;
 }
 
-#btnPlaceOrder {
+.proceed-button {
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-background-color: #3358FF;
@@ -29,7 +29,7 @@
     -fx-font-size: 15;
 }
 
-#btnCancelOrder {
+.cancel-button {
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-background-color: #C1CCFF;

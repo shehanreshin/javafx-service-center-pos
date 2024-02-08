@@ -28,7 +28,7 @@
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/dashboard/home.png" />
+                  <Image url="@../img/dashboard/home-a.png" />
                </image>
             </ImageView>
          </graphic>
@@ -60,7 +60,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="346.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnUsers" layoutY="346.0" mnemonicParsing="false" onAction="#usersButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -156,8 +156,8 @@
             <Image url="@../img/dashboard/line.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnPlaceOrder" layoutX="866.0" layoutY="620.0" onAction="#placeOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" text="Place Order" />
-      <JFXButton fx:id="btnCancelOrder" layoutX="866.0" layoutY="672.0" onAction="#cancelOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" text="Cancel" />
+      <JFXButton fx:id="btnPlaceOrder" layoutX="866.0" layoutY="620.0" onAction="#placeOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="proceed-button" text="Place Order" />
+      <JFXButton fx:id="btnCancelOrder" layoutX="866.0" layoutY="672.0" onAction="#cancelOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="cancel-button" text="Cancel" />
       <Label layoutX="866.0" layoutY="476.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Item" />
       <Label fx:id="lblNoOfItems" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="476.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
       <Label layoutX="866.0" layoutY="502.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Basic Cost" />

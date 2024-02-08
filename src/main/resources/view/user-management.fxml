@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserManagementController">
    <children>
       <ImageView fitHeight="744.0" fitWidth="123.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -28,7 +28,7 @@
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/dashboard/home-a.png" />
+                  <Image url="@../img/dashboard/home.png" />
                </image>
             </ImageView>
          </graphic>
@@ -60,11 +60,11 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btnUsers" layoutY="346.0" mnemonicParsing="false" onAction="#usersButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button layoutY="346.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/dashboard/users.png" />
+                  <Image url="@../img/dashboard/users-a.png" />
                </image>
             </ImageView>
          </graphic>
@@ -87,46 +87,19 @@
             </ImageView>
          </graphic>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3358ff" height="26.0" layoutX="78.0" layoutY="142.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="142.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="193.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="244.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="295.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="346.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3358ff" height="26.0" layoutX="78.0" layoutY="346.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="26.0" layoutX="78.0" layoutY="636.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="744.0" layoutX="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="754.0" />
       <ImageView fitHeight="36.0" fitWidth="307.0" layoutX="112.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/home/header.png" />
+            <Image url="@../img/user-management/manage_users.png" />
          </image>
       </ImageView>
-      <Label layoutX="118.0" layoutY="74.0" style="-fx-font-size: 11; -fx-text-fill: #333333;" text="Discover whatever you need easily" />
-      <Button fx:id="btnElectronic" graphicTextGap="10.0" layoutX="112.0" layoutY="137.0" mnemonicParsing="false" onAction="#electronicButtonOnAction" prefHeight="35.0" prefWidth="122.0" styleClass="item-type-inactive" stylesheets="@../css/dashboard.css" text="Electronic">
-         <graphic>
-            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/home/electronic-ia.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnElectrical" graphicTextGap="10.0" layoutX="251.0" layoutY="137.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" styleClass="item-type-active" stylesheets="@../css/dashboard.css" text="Electrical">
-         <graphic>
-            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/home/electrical-a.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <ScrollPane fx:id="scrollPane" layoutX="112.0" layoutY="193.0" prefHeight="526.0" prefWidth="720.0" style="-fx-background-color: #F4F4F4;">
-         <content>
-            <GridPane fx:id="gridPane" style="-fx-background-color: #F4F4F4;">
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </content>
-      </ScrollPane>
+      <Label layoutX="118.0" layoutY="74.0" style="-fx-font-size: 11; -fx-text-fill: #333333;" text="Managing users has never been easier" />
       <ImageView fitHeight="744.0" fitWidth="299.0" layoutX="834.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/dashboard/order-card.png" />
@@ -134,7 +107,7 @@
       </ImageView>
       <ImageView fitHeight="27.0" fitWidth="127.0" layoutX="866.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/dashboard/current_order.png" />
+            <Image url="@../img/user-management/add_user.png" />
          </image>
       </ImageView>
       <ScrollPane fx:id="orderScrollPane" layoutX="834.0" layoutY="76.0" prefHeight="348.0" prefWidth="299.0" style="-fx-background-color: #F7F7F7;">
@@ -146,26 +119,11 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <ImageView fitHeight="2.0" fitWidth="214.0" layoutX="866.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/dashboard/line.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="2.0" fitWidth="214.0" layoutX="866.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/dashboard/line.png" />
-         </image>
-      </ImageView>
-      <JFXButton fx:id="btnPlaceOrder" layoutX="866.0" layoutY="620.0" onAction="#placeOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="proceed-button" text="Place Order" />
-      <JFXButton fx:id="btnCancelOrder" layoutX="866.0" layoutY="672.0" onAction="#cancelOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="cancel-button" text="Cancel" />
-      <Label layoutX="866.0" layoutY="476.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Item" />
+      <JFXButton fx:id="btnAddUser" layoutX="866.0" layoutY="620.0" onAction="#addUserButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="proceed-button" text="Add User" />
+      <JFXButton fx:id="btnCancel" layoutX="866.0" layoutY="672.0" onAction="#cancelButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="cancel-button" text="Cancel" />
       <Label fx:id="lblNoOfItems" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="476.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
-      <Label layoutX="866.0" layoutY="502.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Basic Cost" />
       <Label fx:id="lblBasicCost" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="502.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
-      <Label layoutX="866.0" layoutY="528.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Additional Cost" />
       <Label fx:id="lblAdditionalCost" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="528.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
-      <Label layoutX="866.0" layoutY="576.0" style="-fx-font-size: 14; -fx-text-fill: #333333;" text="Total" />
-      <Label fx:id="lblTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="576.0" prefHeight="20.0" prefWidth="122.0" style="-fx-font-size: 14; -fx-text-fill: #333333;" />
    </children>
    <stylesheets>
       <URL value="@../css/common.css" />

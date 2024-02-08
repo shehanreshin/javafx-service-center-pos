@@ -226,4 +226,14 @@ public class HomeController implements Initializable {
         CurrentOrder.getInstance().getCurrentOrder().clear();
         updateCurrentOrdersDisplay();
     }
+
+    public void usersButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/user-management.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
 }
