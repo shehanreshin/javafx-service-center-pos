@@ -8,6 +8,7 @@ import entity.util.ItemType;
 import entity.util.ItemTypeConverter;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -39,6 +40,16 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public boolean delete(String value) throws SQLException, ClassNotFoundException {
         return false;
+    }
+
+    @Override
+    public Item getById(Long id) throws SQLException, ClassNotFoundException {
+        Session session = HibernateUtil.getSession();
+        Query query = session.createQuery("FROM Item WHERE id="+id);
+        query.setMaxResults(1);
+        Item item = (Item) query.uniqueResult();
+        session.close();
+        return item;
     }
 
     @Override

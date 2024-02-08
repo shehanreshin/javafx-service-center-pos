@@ -1,0 +1,29 @@
+#cmbxRole {
+    -fx-background-color: #3358FF;
+    -fx-text-fill: #F7F7F7;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0,0,0,2);
+    -fx-background-radius: 10;
+    -fx-prompt-text-fill: #F7F7F7;
+    -fx-padding: 0 0 0 35;
+}
+
+#cmbxRole:hover {
+    -fx-cursor: hand;
+}
+
+#cmbxRole .list-cell {
+    -fx-text-fill: #F7F7F7;
+}
+
+#cmbxRole .list-cell:focused {
+    -fx-background-color: #3358FF;
+}
+
+#cmbxRole .list-view .list-cell {
+    -fx-text-fill: #0F0F0F;
+}
+
+#cmbxRole .list-view .list-cell:hover {
+    -fx-background-color: #3358FF;
+    -fx-cursor: hand;
+}

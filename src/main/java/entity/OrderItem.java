@@ -30,4 +30,20 @@ public class OrderItem {
 
     @Convert(converter = ItemStatusConverter.class)
     private ItemStatus itemStatus;
+
+    public OrderItem(Orders order, Item item, ItemStatus itemStatus) {
+        this.order = order;
+        this.item = item;
+        this.itemStatus = itemStatus;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof OrderItem && ((OrderItem) obj).id.equals(this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id.intValue();
+    }
 }

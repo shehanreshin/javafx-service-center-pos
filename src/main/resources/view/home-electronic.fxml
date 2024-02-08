@@ -24,16 +24,16 @@
             <Image url="@../img/dashboard/logo.png" />
          </image>
       </ImageView>
-      <Button layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnHome" layoutY="142.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/dashboard/home.png" />
+                  <Image url="@../img/dashboard/home-a.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="193.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnCustomers" layoutY="193.0" mnemonicParsing="false" onAction="#customersButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -42,7 +42,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="244.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnItems" layoutY="244.0" mnemonicParsing="false" onAction="#itemsButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -51,7 +51,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="295.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnOrders" layoutY="295.0" mnemonicParsing="false" onAction="#ordersButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -60,7 +60,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="346.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnUsers" layoutY="346.0" mnemonicParsing="false" onAction="#usersButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,7 +69,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="636.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnSettings" layoutY="636.0" mnemonicParsing="false" onAction="#settingsButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -78,7 +78,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
+      <Button fx:id="btnLogout" layoutY="687.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="26.0" prefWidth="80.0" styleClass="nav-item" stylesheets="@../css/dashboard.css">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -156,8 +156,8 @@
             <Image url="@../img/dashboard/line.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnPlaceOrder" layoutX="866.0" layoutY="620.0" onAction="#placeOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" text="Place Order" />
-      <JFXButton fx:id="btnCancelOrder" layoutX="866.0" layoutY="672.0" onAction="#cancelOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" text="Cancel" />
+      <JFXButton fx:id="btnPlaceOrder" layoutX="866.0" layoutY="620.0" onAction="#placeOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="proceed-button" text="Place Order" />
+      <JFXButton fx:id="btnCancelOrder" layoutX="866.0" layoutY="672.0" onAction="#cancelOrderButtonOnAction" prefHeight="37.0" prefWidth="214.0" styleClass="cancel-button" text="Cancel" />
       <Label layoutX="866.0" layoutY="476.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Item" />
       <Label fx:id="lblNoOfItems" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="958.0" layoutY="476.0" prefHeight="17.0" prefWidth="122.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" />
       <Label layoutX="866.0" layoutY="502.0" style="-fx-font-size: 12; -fx-text-fill: #333333;" text="Basic Cost" />

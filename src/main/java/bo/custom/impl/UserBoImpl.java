@@ -5,9 +5,12 @@ import bo.util.HashConverter;
 import bo.util.Mailer;
 import dao.custom.UserDao;
 import dao.custom.impl.UserDaoImpl;
+import dto.ItemDto;
 import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
+import entity.Item;
 import entity.User;
+import entity.util.UserRole;
 import jakarta.mail.MessagingException;
 import lombok.Getter;
 
@@ -15,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,14 +35,27 @@ public class UserBoImpl implements UserBo {
                         dto.getName(),
                         dto.getEmail(),
                         dto.getPassword(),
-                        dto.getRole()
+                        dto.getRole(),
+                        dto.isActive()
                 )
         );
     }
 
     @Override
-    public List<UserDto> allUsers() {
-        return null;
+    public List<UserDto> allUsers() throws SQLException, ClassNotFoundException {
+        List<User> userList = userDao.getAll();
+        List<UserDto> userDtoList = new ArrayList<>();
+        for (User user : userList) {
+            userDtoList.add(new UserDto(
+                    user.getId(),
+                    user.getName(),
+                    user.getEmail(),
+                    user.getPassword(),
+                    user.getRole(),
+                    user.isActive()
+            ));
+        }
+        return userDtoList;
     }
 
     @Override
@@ -64,7 +81,8 @@ public class UserBoImpl implements UserBo {
                 selectedUser.getName(),
                 selectedUser.getEmail(),
                 selectedUser.getPassword(),
-                selectedUser.getRole()
+                selectedUser.getRole(),
+                selectedUser.isActive()
         );
     }
 
@@ -93,7 +111,7 @@ public class UserBoImpl implements UserBo {
     }
 
     private void generateOtp() {
-        currentOtp = (int) (Math.random() * 100000) + 10000;
+        currentOtp = (int) (Math.random() * 10000) + 10000;
     }
 
     @Override
@@ -110,6 +128,20 @@ public class UserBoImpl implements UserBo {
         String hashedPassword = hashConverter.toHexString(hashConverter.getHash(password));
         User user = getUserEntityByEmail(email);
         user.setPassword(hashedPassword);
+        return userDao.update(user);
+    }
+
+    @Override
+    public boolean updateRole(Long id, UserRole role) throws SQLException, ClassNotFoundException {
+        User user = userDao.getById(id);
+        user.setRole(role);
+        return userDao.update(user);
+    }
+
+    @Override
+    public boolean updateStatus(Long id, boolean isActive) throws SQLException, ClassNotFoundException {
+        User user = userDao.getById(id);
+        user.setActive(isActive);
         return userDao.update(user);
     }
 }
