@@ -23,7 +23,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class UserManagementController implements Initializable {
+public class OrdersController implements Initializable {
     @FXML
     private AnchorPane pane;
 

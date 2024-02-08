@@ -236,4 +236,22 @@ public class HomeController implements Initializable {
         }
         stage.show();
     }
+
+    public void homeButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void reportsButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void itemsButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void ordersButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void settingsButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void logoutButtonOnAction(ActionEvent actionEvent) {
+    }
 }
