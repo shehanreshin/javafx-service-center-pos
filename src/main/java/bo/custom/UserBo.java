@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UserBo {
     boolean saveUser(UserDto dto) throws SQLException, ClassNotFoundException;
-    List<UserDto> allUsers();
+    List<UserDto> allUsers() throws SQLException, ClassNotFoundException;
     boolean updateUser(UserDto dto);
     boolean deleteUser(String id);
     UserDto searchUser(String id);

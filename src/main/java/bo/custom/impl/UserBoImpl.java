@@ -5,8 +5,10 @@ import bo.util.HashConverter;
 import bo.util.Mailer;
 import dao.custom.UserDao;
 import dao.custom.impl.UserDaoImpl;
+import dto.ItemDto;
 import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
+import entity.Item;
 import entity.User;
 import jakarta.mail.MessagingException;
 import lombok.Getter;
@@ -15,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,8 +41,20 @@ public class UserBoImpl implements UserBo {
     }
 
     @Override
-    public List<UserDto> allUsers() {
-        return null;
+    public List<UserDto> allUsers() throws SQLException, ClassNotFoundException {
+        List<User> userList = userDao.getAll();
+        List<UserDto> userDtoList = new ArrayList<>();
+        for (User user : userList) {
+            userDtoList.add(new UserDto(
+                    user.getId(),
+                    user.getName(),
+                    user.getEmail(),
+                    user.getPassword(),
+                    user.getRole(),
+                    user.isActive()
+            ));
+        }
+        return userDtoList;
     }
 
     @Override
