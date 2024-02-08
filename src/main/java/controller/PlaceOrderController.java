@@ -3,6 +3,7 @@ package controller;
 import db.CurrentOrder;
 import dto.CustomerDto;
 import dto.ItemDto;
+import entity.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -62,6 +63,7 @@ public class PlaceOrderController implements Initializable {
     private Button btnClose;
 
     private int total = 0;
+    private CustomerDto selectedCustomer;
 
     public void closeButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) pane.getScene().getWindow();
@@ -76,6 +78,25 @@ public class PlaceOrderController implements Initializable {
             alert.showAndWait();
             return;
         }
+
+        List<ItemDto> selectedItems = CurrentOrder.getInstance().getCurrentOrder();
+        if (selectedItems.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No Items Selected");
+            alert.setContentText("Please select some items to add to the order");
+            alert.showAndWait();
+            return;
+        }
+
+        if(selectedCustomer == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Customer not selected");
+            alert.setContentText("Please select a customer");
+            alert.showAndWait();
+            return;
+        }
+
+        ((Stage) pane.getScene().getWindow()).close();
     }
 
     public void addCustomerButtonOnAction(ActionEvent actionEvent) {
@@ -110,9 +131,10 @@ public class PlaceOrderController implements Initializable {
     }
 
     public void setCustomerInfo(CustomerDto customer) {
-        txtCustomerContact.setText(customer.getContactNumber());
-        txtCustomerName.setText(customer.getName());
-        txtCustomerEmail.setText(customer.getEmail());
+        selectedCustomer = customer;
+        txtCustomerContact.setText(selectedCustomer.getContactNumber());
+        txtCustomerName.setText(selectedCustomer.getName());
+        txtCustomerEmail.setText(selectedCustomer.getEmail());
     }
 
     private boolean isAnyFieldEmpty() {
