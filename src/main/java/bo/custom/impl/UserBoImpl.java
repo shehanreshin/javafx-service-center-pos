@@ -10,6 +10,7 @@ import dto.UserDto;
 import dto.wrapper.UserDtoWrapper;
 import entity.Item;
 import entity.User;
+import entity.util.UserRole;
 import jakarta.mail.MessagingException;
 import lombok.Getter;
 
@@ -127,6 +128,20 @@ public class UserBoImpl implements UserBo {
         String hashedPassword = hashConverter.toHexString(hashConverter.getHash(password));
         User user = getUserEntityByEmail(email);
         user.setPassword(hashedPassword);
+        return userDao.update(user);
+    }
+
+    @Override
+    public boolean updateRole(Long id, UserRole role) throws SQLException, ClassNotFoundException {
+        User user = userDao.getById(id);
+        user.setRole(role);
+        return userDao.update(user);
+    }
+
+    @Override
+    public boolean updateStatus(Long id, boolean isActive) throws SQLException, ClassNotFoundException {
+        User user = userDao.getById(id);
+        user.setActive(isActive);
         return userDao.update(user);
     }
 }

@@ -113,13 +113,13 @@ public class UserManagementController implements Initializable {
             throw new RuntimeException(e);
         }
         for (UserDto userDto : dtoList) {
-            JFXComboBox<String> cmbxRole = new JFXComboBox<>();
+            ComboBox<String> cmbxRole = new ComboBox<>();
             cmbxRole.getItems().add("Admin");
             cmbxRole.getItems().add("Staff");
             cmbxRole.getSelectionModel()
                     .select(userDto.getRole() == UserRole.ADMIN ? 0 : 1);
 
-            JFXComboBox<String> cmbxStatus = new JFXComboBox<>();
+            ComboBox<String> cmbxStatus = new ComboBox<>();
             cmbxStatus.getItems().add("Active");
             cmbxStatus.getItems().add("Disabled");
             cmbxStatus.getSelectionModel()
@@ -132,6 +132,22 @@ public class UserManagementController implements Initializable {
                     cmbxRole,
                     cmbxStatus
             );
+
+            cmbxRole.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+                try {
+                    userBo.updateRole(userDto.getUserId(), (newValue.equals("Admin") ? UserRole.ADMIN : UserRole.STAFF));
+                } catch (SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+            cmbxStatus.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+                try {
+                    userBo.updateStatus(userDto.getUserId(), newValue.equals("Active"));
+                } catch (SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            });
 
             tmList.add(userTm);
         }
