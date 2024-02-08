@@ -24,6 +24,8 @@ public class User {
     @Convert(converter = UserRoleConverter.class)
     private UserRole role;
 
+    private boolean isActive;
+
     @Override
     public boolean equals(Object obj) {
         return obj instanceof User && ((User) obj).id.equals(this.id);
